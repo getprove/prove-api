@@ -41,38 +41,15 @@ You can also email <support@prove.io> or file an [Issue](https://github.com/prov
 
 ## Quick Start
 
-1. Send us a phone number to verify.
-
-    > Request:
-
-    ```bash
-    curl https://api.prove.io/v1/create \
-         -u prove_testKey123: \
-         -d tel=1234567890
-    ```
-
-    > Response:
-
-    ```json
-    {
-      "id": "awoeif128912938",
-      "tel": "1234567890",
-      "pin": 819820,
-      "verified": false
-    }
-    ```
-
-2. User receives SMS (text message) with a 6-digit pin.
-
-3. Send us the user entered pin to verify their phone number.
+1. Send us a phone number to verify by text message ("SMS").
 
     > Request:
 
     ```bash
     curl https://api.prove.io/v1/verify \
          -u prove_testKey123: \
+         -d type=text \
          -d tel=1234567890
-         -d pin=819820
     ```
 
     > Response:
@@ -81,7 +58,48 @@ You can also email <support@prove.io> or file an [Issue](https://github.com/prov
     {
       "id": "awoeif128912938",
       "tel": "1234567890",
-      "pin": 819820,
+      "text": true,
+      "call": false,
+      "verified": false
+    }
+    ```
+
+2. User receives SMS (text message) with a 6-digit pin.  When using a test API key, the pin is always `1337`.
+
+3. Send us the user entered pin to verify their phone number.
+
+    > Request:
+
+    ```bash
+    curl https://api.prove.io/v1/verify/awoeif128912938 \
+         -u prove_testKey123: \
+         -d pin=1337
+    ```
+
+    > Response:
+
+    ```json
+    {
+      "id": "awoeif128912938",
+      "tel": "1234567890",
+      "text": true,
+      "call": false,
       "verified": true
     }
     ```
+
+
+## Resources <sup>v1</sup>
+
+Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/v1/verify`)
+
+### Verify
+
+| Path            | Method | Description                    |
+| --------------- |:------:| ------------------------------ |
+| /verify         | GET    | List all verifications         |
+| /verify         | POST   | Create a new verification      |
+| /verify/:id/pin | POST   | Verify a pin                   |
+| /verify/:id     | GET    | Retrieve existing verification |
+| /verify/:id     | PUT    | Update a verification          |
+| /verify/:id     | DELETE | Delete a verification          |
