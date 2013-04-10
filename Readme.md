@@ -46,7 +46,7 @@ You can also email <support@prove.io> or file an [Issue](https://github.com/prov
     ```bash
     curl https://prove.io/api/v1/verify \
          -u prove_testKey123: \
-         -d type=text \
+         -d text=true \
          -d tel=1234567890
     ```
 
