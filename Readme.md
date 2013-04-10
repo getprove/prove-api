@@ -17,7 +17,9 @@ Users receive an SMS or phone call and verify their phone number with pin.
 ## Overview
 
 1. Sign up for a free Prove [developer account](http://prove.io/signup).
+
 2. Create a new app and receive your API key.
+
 3. Integrate our RESTful API with your DSL wrapper:
 
         * Node (npm) <https://github.com/proveio/prove-node>
