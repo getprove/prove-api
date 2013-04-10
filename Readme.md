@@ -44,7 +44,7 @@ You can also email <support@prove.io> or file an [Issue](https://github.com/prov
     > Request:
 
     ```bash
-    curl https://api.prove.io/v1/verify \
+    curl https://prove.io/api/v1/verify \
          -u prove_testKey123: \
          -d type=text \
          -d tel=1234567890
@@ -69,7 +69,7 @@ You can also email <support@prove.io> or file an [Issue](https://github.com/prov
     > Request:
 
     ```bash
-    curl https://api.prove.io/v1/verify/awoeif128912938 \
+    curl https://prove.io/api/v1/verify/awoeif128912938 \
          -u prove_testKey123: \
          -d pin=1337
     ```
@@ -89,7 +89,7 @@ You can also email <support@prove.io> or file an [Issue](https://github.com/prov
 
 ## Resources <sup>v1</sup>
 
-Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/v1/verify`)
+Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/api/v1/verify`)
 
 ### Verify
 
