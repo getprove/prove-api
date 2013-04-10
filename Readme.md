@@ -1,6 +1,6 @@
 # Prove API
 
-[Prove](http://prove.io) is a phone verification service that allows you to utilize our API to verify your users.
+[Prove](https://getprove.com) is a phone verification service that allows you to utilize our API to verify your users.
 
 Users receive an SMS or phone call and verify their phone number with pin.
 
@@ -15,26 +15,26 @@ Users receive an SMS or phone call and verify their phone number with pin.
 
 ## Overview
 
-1. Sign up for a free Prove [developer account](http://prove.io/signup).
+1. Sign up for a free Prove [developer account](https://getprove.com/signup).
 
 2. Create a new app and receive your API key.
 
 3. Integrate our RESTful API with your DSL wrapper:
-    * Node (npm) <https://github.com/proveio/prove-node>
-    * Ruby (gem) <https://github.com/proveio/prove-ruby> (coming soon)
-    * Python (pip) <https://github.com/proveio/prove-python> (coming soon)
-    * PHP (pear) <https://github.com/proveio/prove-php> (coming soon)
+    * Node (npm) <https://github.com/getprove/prove-node>
+    * Ruby (gem) <https://github.com/getprove/prove-ruby> (coming soon)
+    * Python (pip) <https://github.com/getprove/prove-python> (coming soon)
+    * PHP (pear) <https://github.com/getprove/prove-php> (coming soon)
 
 See [Quick Start](#quick-start) for an example implementation.
 
 
 ## Support
 
-Send us a tweet [@proveio](http://twitter.com/proveio).
+Send us a tweet [@getprove](http://twitter.com/getprove).
 
-Join us on [IRC WebChat](http://webchat.freenode.net/?channels=prove.io) or with a client in `#prove.io` on `irc.freenode.net`.
+Join us on [IRC WebChat](http://webchat.freenode.net/?channels=getprove) or with a client in `#getprove` on `irc.freenode.net`.
 
-You can also email <support@prove.io> or file an [Issue](https://github.com/proveio/prove-api/issues/new).
+You can also email <support@getprove.com> or file an [Issue](https://github.com/getprove/prove-api/issues/new).
 
 
 ## Quick Start
@@ -44,7 +44,7 @@ You can also email <support@prove.io> or file an [Issue](https://github.com/prov
     > Request:
 
     ```bash
-    curl https://prove.io/api/v1/verify \
+    curl https://getprove.com/api/v1/verify \
          -u prove_testKey123: \
          -d text=true \
          -d tel=1234567890
@@ -69,7 +69,7 @@ You can also email <support@prove.io> or file an [Issue](https://github.com/prov
     > Request:
 
     ```bash
-    curl https://prove.io/api/v1/verify/awoeif128912938 \
+    curl https://getprove.com/api/v1/verify/awoeif128912938 \
          -u prove_testKey123: \
          -d pin=1337
     ```
@@ -101,3 +101,4 @@ Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/api/v1/verify`)
 | /verify/:id     | GET    | Retrieve existing verification |
 | /verify/:id     | PUT    | Update a verification          |
 | /verify/:id     | DELETE | Delete a verification          |
+
