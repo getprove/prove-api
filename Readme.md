@@ -20,10 +20,10 @@ Users receive an SMS or phone call and verify their phone number with pin.
 2. Create a new app and receive your API key.
 3. Integrate our RESTful API with your DSL wrapper:
 
-    * Node (npm) <https://github.com/proveio/prove-node>
-    * Ruby (gem) <https://github.com/proveio/prove-ruby> (coming soon)
-    * Python (pip) <https://github.com/proveio/prove-python> (coming soon)
-    * PHP (pear) <https://github.com/proveio/prove-php> (coming soon)
+        * Node (npm) <https://github.com/proveio/prove-node>
+        * Ruby (gem) <https://github.com/proveio/prove-ruby> (coming soon)
+        * Python (pip) <https://github.com/proveio/prove-python> (coming soon)
+        * PHP (pear) <https://github.com/proveio/prove-php> (coming soon)
 
 See [Quick Start](#quick-start) for an example implementation.
 
