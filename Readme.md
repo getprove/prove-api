@@ -4,6 +4,7 @@
 
 Users receive an SMS or phone call and verify their phone number with pin.
 
+<strong>Built in a 24 hour code sprint. Boom.</strong>
 
 ## Index
 
@@ -17,7 +18,7 @@ Users receive an SMS or phone call and verify their phone number with pin.
 
 1. Sign up for a free Prove [developer account](https://getprove.com/signup).
 
-2. Create a new app and receive your API key.
+2. Grab your API test and live keys from your [dashboard](https://getprove.com/login?redirect=/).
 
 3. Integrate our RESTful API with your DSL wrapper:
     * Node (npm) <https://github.com/getprove/prove-node>
@@ -45,8 +46,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
 
     ```bash
     curl https://getprove.com/api/v1/verify \
-         -u prove_testKey123: \
-         -d text=true \
+         -u test_APIKEY123: \
          -d tel=1234567890
     ```
 
@@ -62,7 +62,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
     }
     ```
 
-2. User receives SMS (text message) with a 6-digit pin.  When using a test API key, the pin is always `1337`.
+2. User receives SMS (text message) with a 6-digit pin.  If you're in testMode, then the pin is always `1337`.
 
 3. Send us the user entered pin to verify their phone number.
 
@@ -70,7 +70,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
 
     ```bash
     curl https://getprove.com/api/v1/verify/awoeif128912938 \
-         -u prove_testKey123: \
+         -u test_APIKEY123: \
          -d pin=1337
     ```
 
@@ -99,6 +99,4 @@ Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/api/v1/verify`)
 | /verify         | POST   | Create a new verification      |
 | /verify/:id/pin | POST   | Verify a pin                   |
 | /verify/:id     | GET    | Retrieve existing verification |
-| /verify/:id     | PUT    | Update a verification          |
-| /verify/:id     | DELETE | Delete a verification          |
 
