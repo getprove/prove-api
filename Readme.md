@@ -1,10 +1,9 @@
-# Prove API
+# Docs
 
 [Prove](https://getprove.com) is a phone verification service that allows you to utilize our API to verify your users.
 
 Users receive an SMS or phone call and verify their phone number with pin.
 
-<strong>Built in a 24 hour code sprint. Boom.</strong>
 
 ## Index
 
