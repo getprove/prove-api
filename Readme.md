@@ -21,9 +21,10 @@ Users receive an SMS or phone call and verify their phone number with pin.
 
 3. Integrate our RESTful API with your DSL wrapper:
     * Node (npm) <https://github.com/getprove/prove-node>
-    * Ruby (gem) <https://github.com/getprove/prove-ruby> (coming soon)
+    * Ruby (gem) <https://github.com/getprove/prove-ruby>
     * Python (pip) <https://github.com/getprove/prove-python> (coming soon)
-    * PHP (pear) <https://github.com/getprove/prove-php> (coming soon)
+    * PHP <https://github.com/getprove/prove-php> (coming soon)
+    * Perl <https://github.com/getprove/prove-php> (coming soon)
 
 See [Quick Start](#quick-start) for an example implementation.
 
@@ -68,7 +69,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
     > Request:
 
     ```bash
-    curl https://getprove.com/api/v1/verify/awoeif128912938 \
+    curl https://getprove.com/api/v1/verify/awoeif128912938/pin \
          -u test_APIKEY123: \
          -d pin=1337
     ```
