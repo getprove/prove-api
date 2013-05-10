@@ -113,37 +113,37 @@ curl https://getprove.com/api/v1/verify
 
 > Response:
 
-```bash
+```json
 [
   {
-    tel: '1234567890',
-    updated: '2013-05-10T01:30:30.962Z',
-    created: '2013-05-10T01:30:30.518Z',
-    test: true,
-    verified: true,
-    call: false,
-    text: true,
-    id: '518c4db62602b8fe02000061'
+    "tel": "1234567890",
+    "updated": "2013-05-10T01:30:30.962Z",
+    "created": "2013-05-10T01:30:30.518Z",
+    "test": true,
+    "verified": true,
+    "call": false,
+    "text": true,
+    "id": "518c4db62602b8fe02000061"
   },
   {
-    tel: '1234567890',
-    updated: '2013-05-10T01:30:30.607Z',
-    created: '2013-05-10T01:30:30.606Z',
-    test: true,
-    verified: false,
-    call: false,
-    text: true,
-    id: '518c4db62602b8fe02000062'
+    "tel": "1234567890",
+    "updated": "2013-05-10T01:30:30.607Z",
+    "created": "2013-05-10T01:30:30.606Z",
+    "test": true,
+    "verified": false,
+    "call": false,
+    "text": true,
+    "id": "518c4db62602b8fe02000062"
   },
   {
-    tel: '1234567890',
-    updated: '2013-05-10T01:30:31.251Z',
-    created: '2013-05-10T01:30:30.783Z',
-    test: true,
-    verified: true,
-    call: false,
-    text: true,
-    id: '518c4db62602b8fe02000063'
+    "tel": "1234567890",
+    "updated": "2013-05-10T01:30:31.251Z",
+    "created": "2013-05-10T01:30:30.783Z",
+    "test": true,
+    "verified": true,
+    "call": false,
+    "text": true,
+    "id": "518c4db62602b8fe02000063"
   }
 ]
 ```
@@ -162,15 +162,15 @@ curl https://getprove.com/api/v1/verify \
 
 ```json
 {
-  id: '518c4e762602b8fe02000061',
-  tel: '1234567890',
-  country: 'US',
-  text: true,
-  call: false,
-  test: true,
-  verified: false,
-  created: '2013-05-10T01:33:42.202Z',
-  updated: '2013-05-10T01:33:42.203Z'
+  "id": "518c4e762602b8fe02000061",
+  "tel": "1234567890",
+  "country": "US",
+  "text": true,
+  "call": false,
+  "test": true,
+  "verified": false,
+  "created": "2013-05-10T01:33:42.202Z",
+  "updated": "2013-05-10T01:33:42.203Z"
 }
 ```
 
@@ -209,12 +209,12 @@ curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061 \
 
 ```json
 {
-  id: '518c4db62602b8fe02000061',
-  tel: '1234567890',
-  text: true,
-  call: false,
-  verified: true,
-  created: '2013-05-10T01:30:30.518Z',
-  updated: '2013-05-10T01:30:30.962Z'
+  "id": "518c4db62602b8fe02000061",
+  "tel": "1234567890",
+  "text": true,
+  "call": false,
+  "verified": true,
+  "created": "2013-05-10T01:30:30.518Z",
+  "updated": "2013-05-10T01:30:30.962Z"
 }
 ```
