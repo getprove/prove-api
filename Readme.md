@@ -21,10 +21,10 @@ Users receive an SMS or phone call and verify their phone number with pin.
 
 3. Integrate our RESTful API with your DSL wrapper:
     * Perl <https://github.com/getprove/prove-php> (coming soon)
-    * Node (npm) <https://github.com/getprove/prove-node>
-    * Ruby (gem) <https://github.com/getprove/prove-ruby>
-    * Python (pip) <https://github.com/getprove/prove-python> (coming soon)
-    * PHP <https://github.com/getprove/prove-php> (coming soon)
+    * Node <https://github.com/getprove/prove-node>
+    * Ruby <https://github.com/getprove/prove-ruby>
+    * Python <https://github.com/getprove/prove-python>
+    * PHP <https://github.com/getprove/prove-php>
 
 See [Quick Start](#quick-start) for an example implementation.
 
@@ -46,7 +46,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
 
     ```bash
     curl https://getprove.com/api/v1/verify \
-         -u test_APIKEY123: \
+         -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
          -d tel=1234567890
     ```
 
@@ -54,7 +54,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
 
     ```json
     {
-      "id": "awoeif128912938",
+      "id": "518c4db62602b8fe02000061",
       "tel": "1234567890",
       "text": true,
       "call": false,
@@ -69,8 +69,8 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
     > Request:
 
     ```bash
-    curl https://getprove.com/api/v1/verify/awoeif128912938/pin \
-         -u test_APIKEY123: \
+    curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/pin \
+         -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
          -d pin=1337
     ```
 
@@ -78,7 +78,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
 
     ```json
     {
-      "id": "awoeif128912938",
+      "id": "518c4db62602b8fe02000061",
       "tel": "1234567890",
       "text": true,
       "call": false,
@@ -100,3 +100,119 @@ Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/api/v1/verify`)
 | /verify/:id/pin | POST   | Verify a pin                   |
 | /verify/:id     | GET    | Retrieve existing verification |
 
+#### List all verifications
+
+> Request:
+
+```bash
+curl https://getprove.com/api/v1/verify
+  -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+```
+
+> Response:
+
+```bash
+[
+  {
+    tel: '1234567890',
+    updated: '2013-05-10T01:30:30.962Z',
+    created: '2013-05-10T01:30:30.518Z',
+    test: true,
+    verified: true,
+    call: false,
+    text: true,
+    id: '518c4db62602b8fe02000061'
+  },
+  {
+    tel: '1234567890',
+    updated: '2013-05-10T01:30:30.607Z',
+    created: '2013-05-10T01:30:30.606Z',
+    test: true,
+    verified: false,
+    call: false,
+    text: true,
+    id: '518c4db62602b8fe02000062'
+  },
+  {
+    tel: '1234567890',
+    updated: '2013-05-10T01:30:31.251Z',
+    created: '2013-05-10T01:30:30.783Z',
+    test: true,
+    verified: true,
+    call: false,
+    text: true,
+    id: '518c4db62602b8fe02000063'
+  }
+]
+```
+
+#### Create a new verification
+
+> Request:
+
+```bash
+curl https://getprove.com/api/v1/verify \
+     -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+     -d tel=1234567890
+```
+
+> Response:
+
+```json
+{
+  id: '518c4e762602b8fe02000061',
+  tel: '1234567890',
+  country: 'US',
+  text: true,
+  call: false,
+  test: true,
+  verified: false,
+  created: '2013-05-10T01:33:42.202Z',
+  updated: '2013-05-10T01:33:42.203Z'
+}
+```
+
+#### Verify a pin
+
+> Request:
+
+```bash
+curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/pin \
+     -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+     -d pin=1337
+```
+
+> Response:
+
+```json
+{
+  "id": "518c4db62602b8fe02000061",
+  "tel": "1234567890",
+  "text": true,
+  "call": false,
+  "verified": true
+}
+```
+
+#### Retrieve existing verification
+
+> Request:
+
+```bash
+curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061 \
+     -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+```
+
+> Response:
+
+```json
+{
+  id: '518c4db62602b8fe02000061',
+  tel: '1234567890',
+  text: true,
+  call: false,
+  verified: true,
+  created: '2013-05-10T01:30:30.518Z',
+  updated: '2013-05-10T01:30:30.962Z'
+}
+```
