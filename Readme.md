@@ -91,6 +91,8 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
 
 Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/api/v1/verify`)
 
+**Note:** All `created` and `updated` fields are in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format as per ECMAScript 5 standard `.toISOString()` [function](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Date/toISOString).
+
 ### Verify
 
 | Path            | Method | Description                    |
