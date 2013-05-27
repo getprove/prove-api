@@ -19,7 +19,7 @@ Users receive an SMS or phone call and verify their phone number with pin.
 
 2. Grab your API test and live keys from your [dashboard](https://getprove.com/login?redirect=/).
 
-3. Integrate our RESTful API with your DSL wrapper:
+3. Integrate with one of our RESTful API wrappers:
     * Perl <https://github.com/getprove/prove-perl>
     * Node <https://github.com/getprove/prove-node>
     * Ruby <https://github.com/getprove/prove-ruby>
