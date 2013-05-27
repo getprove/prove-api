@@ -62,7 +62,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
     }
     ```
 
-2. User receives SMS (text message) with a 6-digit pin.  If you're in testMode, then the pin is always `1337`.
+2. User receives SMS (text message) with a 6-digit pin.  If you're in testMode, then the pin is always `000000`.
 
 3. Send us the user entered pin to verify their phone number.
 
@@ -71,7 +71,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
     ```bash
     curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/pin \
          -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
-         -d pin=1337
+         -d pin=000000
     ```
 
     > Response:
@@ -181,7 +181,7 @@ curl https://getprove.com/api/v1/verify \
 ```bash
 curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/pin \
      -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
-     -d pin=1337
+     -d pin=000000
 ```
 
 > Response:
