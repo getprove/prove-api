@@ -119,7 +119,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // send responses for plugin's xhr requests
 app.post('/verify', function(req, res, next) {
-  getprove.verify.pin(token, pin, function(err, verify) {
+  getprove.verify.pin(req.body.proveToken, req.body.provePin, function(err, verify) {
     if (err) return res.send(400, err.response)
     // note: here's a good spot to store verify.id to db
     res.send(200)
