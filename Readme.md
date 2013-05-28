@@ -10,6 +10,7 @@ Users receive an SMS or phone call and verify their phone number with pin.
 * [Overview](#overview)
 * [Support](#support)
 * [Quick Start](#quick-start)
+* [Plugin](#plugin)
 * [Resources](#resources)
 
 
@@ -26,7 +27,7 @@ Users receive an SMS or phone call and verify their phone number with pin.
     * Python <https://github.com/getprove/prove-python>
     * PHP <https://github.com/getprove/prove-php>
 
-See [Quick Start](#quick-start) for an example implementation.
+See [Quick Start](#quick-start) or [Plugin](#plugin) for example implementations.
 
 
 ## Support
@@ -85,6 +86,51 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
       "verified": true
     }
     ```
+
+
+## Plugin
+
+Integrate our plugin within minutes.  Here's a quick example:
+
+> ./public/index.html
+
+```html
+<form action="/verify" method="post">
+  <script src="//getprove.com/v1/verify.js" data-callback="/verified.html" data-key="YOUR-API-PUBLIC-KEY" class="prove-verify"></script>
+</form>
+```
+
+> ./public/verified.html
+
+```html
+<h1>Congrats, you successfully verified your phone number</h1>
+```
+
+> ./app.js
+
+```js
+var getprove = require('getprove')('YOUR-API-SECRET-KEY')
+  , path     = require('path')
+  , express  = require('express')
+  , app      = express()
+
+// serve up index.html file with the plugin rendered
+app.use(express.static(path.join(__dirname, 'public')))
+
+// send responses for plugin's xhr requests
+app.post('/verify', function(req, res, next) {
+  getprove.verify.pin(token, pin, function(err, verify) {
+    if (err) return res.send(400, err.response)
+    // note: here's a good spot to store verify.id to db
+    res.send(200)
+  })
+})
+
+// start the server
+app.listen(3000)
+```
+
+Then visit <http://localhost:3000/> and test it out.
 
 
 ## Resources <sup>v1</sup>
