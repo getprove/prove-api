@@ -47,7 +47,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
 
     ```bash
     curl https://getprove.com/api/v1/verify \
-         -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+         -u YOUR-SECRET-API-KEY: \
          -d tel=1234567890
     ```
 
@@ -71,7 +71,7 @@ You can also email <support@getprove.com> or file an [Issue](https://github.com/
 
     ```bash
     curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/pin \
-         -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+         -u YOUR-SECRET-API-KEY: \
          -d pin=000000
     ```
 
@@ -154,7 +154,7 @@ Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/api/v1/verify`)
 
 ```bash
 curl https://getprove.com/api/v1/verify
-  -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+  -u YOUR-SECRET-API-KEY:
 ```
 
 > Response:
@@ -200,7 +200,7 @@ curl https://getprove.com/api/v1/verify
 
 ```bash
 curl https://getprove.com/api/v1/verify \
-     -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+     -u YOUR-SECRET-API-KEY: \
      -d tel=1234567890
 ```
 
@@ -226,7 +226,7 @@ curl https://getprove.com/api/v1/verify \
 
 ```bash
 curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/pin \
-     -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+     -u YOUR-SECRET-API-KEY: \
      -d pin=000000
 ```
 
@@ -248,7 +248,7 @@ curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/pin \
 
 ```bash
 curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061 \
-     -u test_74Lw5SoskNxT4aZmN9kZUw7ykzx: \
+     -u YOUR-SECRET-API-KEY:
 ```
 
 > Response:
