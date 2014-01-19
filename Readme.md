@@ -141,12 +141,13 @@ Prefix all paths with `/api/v1` (e.g. `/verify` becomes `/api/v1/verify`)
 
 ### Verify
 
-| Path            | Method | Description                    |
-| --------------- |:------:| ------------------------------ |
-| /verify         | GET    | List all verifications         |
-| /verify         | POST   | Create a new verification      |
-| /verify/:id/pin | POST   | Verify a pin                   |
-| /verify/:id     | GET    | Retrieve existing verification |
+| Path                   | Method | Description                     |
+| ---------------------- |:------:| ------------------------------- |
+| /verify                | GET    | List all verifications          |
+| /verify                | POST   | Create a new verification       |
+| /verify/:id/pin        | POST   | Verify a pin                    |
+| /verify/:id            | GET    | Retrieve existing verification  |
+| /verify/:id/delete     | POST   | Delete an existing verification |
 
 #### List all verifications
 
@@ -248,6 +249,29 @@ curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/pin \
 
 ```bash
 curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061 \
+     -u YOUR-SECRET-API-KEY:
+```
+
+> Response:
+
+```json
+{
+  "id": "518c4db62602b8fe02000061",
+  "tel": "1234567890",
+  "text": true,
+  "call": false,
+  "verified": true,
+  "created": "2013-05-10T01:30:30.518Z",
+  "updated": "2013-05-10T01:30:30.962Z"
+}
+```
+
+#### Delete existing verification
+
+> Request:
+
+```bash
+curl https://getprove.com/api/v1/verify/518c4db62602b8fe02000061/delete \
      -u YOUR-SECRET-API-KEY:
 ```
 
