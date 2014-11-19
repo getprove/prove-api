@@ -197,12 +197,15 @@ curl https://getprove.com/api/v1/verify
 
 #### Create a new verification
 
+If you would like to give the user a call (Voice) instead of a text message (SMS) &rarr; please specify `type: "text"` or `type: "call"` in your request body.
+
 > Request:
 
 ```bash
 curl https://getprove.com/api/v1/verify \
      -u YOUR-SECRET-API-KEY: \
      -d tel=1234567890
+     -d type=text
 ```
 
 > Response:
